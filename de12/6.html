@@ -7,6 +7,53 @@
 </head>
 <body>
     <h1>第6回　プログラミング</h1>
+    <diV>
+        私は、プログラミングでストップウォッチができるのではないかと考えました。
+        <h2>コード</h2>
+        <code>
+            <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+            <li style="background-color:#EFF;">import time</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">def convert(sec):</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;minits = sec // 60</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;second = sec % 60</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;milli_sec = (second - int(second)) * 1000</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;hour = minits // 60</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;min = minits % 60</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;return f"{int(hour)}時{int(min)}分{int(second)}秒{int(milli_sec)}"</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">print("★ストップウォッチ★")</li>
+            <li style="background-color:#EFF;">start_signal = input('”ENTER”で開始')</li>
+            <li style="background-color:#EEF;">start_time = time.time()</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">print('"ENTER"でラップ')</li>
+            <li style="background-color:#EFF;">print('”p”と"ENTER"で停止')</li>
+            <li style="background-color:#EEF;">lap_num = 0</li>
+            <li style="background-color:#EFF;">while True:</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;stop_signal = input()</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;stop_time = time.time()</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if stop_signal == '':</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lap_num += 1</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = stop_time - start_time</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time_result = convert(result)</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"lap {lap_num}：{time_result}")</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;elif stop_signal == 'p':</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = stop_time - start_time</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time_result = convert(result)</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"停止時間"f"：{time_result}")</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('"ENTER"でラップ')</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('”p”と"ENTER"で停止')#ここで入力の違いを伝える</li>
+            <li style="background-color:#EFF;"></li>
+            </ol></code>
+        <h3>機能</h3>
+        こちらはストップウォッチの機能として0から時間がはかれるとともにラップタイムも図ることができます。
+        <h3>参照</h3>
+        <a href="https://python-muda.com/python/python-stopwatch/"target="_blank">Pythonでストップウォッチを作ろう</a><br>
+
+    </diV>
     
 
 </body>
