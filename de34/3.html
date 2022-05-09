@@ -10,55 +10,75 @@
             <h2>Assignment1</h2>
             <code>
                 <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
-                <li style="background-color:#EFF;">void setup() {</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;pinMode(DIR, OUTPUT);</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;pinMode(STEP, OUTPUT);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EFF;">const int DIR  = 8;</li>
+                <li style="background-color:#EEF;">const int STEP = 9;</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void setup() {</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;pinMode(DIR, OUTPUT);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;pinMode(STEP, OUTPUT);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
                 <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.begin(9600);</li>
                 <li style="background-color:#EFF;">}</li>
                 <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">void loop() {</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;// put your main code here, to run repeatedly:</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;int val=0;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;val=analogRead(1);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.println(val);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delay(500);</li>
                 <li style="background-color:#EFF;"></li>
-                <li style="background-color:#EEF;">void clockwise(int delaytime){</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, HIGH);//HIGHは時計回り</li>
-                <li style="background-color:#EEF;"></li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
-                <li style="background-color:#EFF;"></li>
-                <li style="background-color:#EEF;">}</li>
-                <li style="background-color:#EFF;"></li>
-                <li style="background-color:#EEF;">void counter_clockwise(int delaytime){</li>
-                <li style="background-color:#EFF;"></li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);//はLOWは反時計回り</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;if(val&lt;200){</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;//もしvalが200より小さかったら、モーターは回らない</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(0);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;counter_clockwise(0);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;else{</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;//そうじゃなかったらモーターは回る</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(5000);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;counter_clockwise(5000);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
                 <li style="background-color:#EFF;">}</li>
                 <li style="background-color:#EEF;"></li>
-                <li style="background-color:#EFF;">void loop() {</li>
-                <li style="background-color:#EEF;">int val=0;</li>
-                <li style="background-color:#EFF;">val=analogRead(1);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.println(val);</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;if(val&lt;200){</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(8,LOW);</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(0);}</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;}</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;digitalWrite(8,HIGH);</li>
-                <li style="background-color:#EEF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
-                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;counter_clockwise(600);}</li>
+                <li style="background-color:#EFF;">void clockwise(int delaytime){</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, HIGH);//HIGHは時計回り</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">}</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">void counter_clockwise(int delaytime){</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);//はLOWは反時計回り</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
                 <li style="background-color:#EEF;">}</li>
-              </ol></code>  
+                </ol></code>
+
                 
-            暗くしたら反対周りになる。<br>
+            暗くしたら周る。<br>
             
             <h2>Assignment2</h2>
             <h3>サウナで”整う”に近い場面とは</h3>
-            <img src="images/IMG_2581.jpg" width="50%"><br>
+            <img src="images/IMG-2581.jpg" width="50%"><br>
+           
 
         </div>
 
