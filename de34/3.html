@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>第3回</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>    
+    <body>
+        <h1>第3回</h1>
+        <div>
+            <h2>Assignment1</h2>
+            <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">void setup() {</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;pinMode(DIR, OUTPUT);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;pinMode(STEP, OUTPUT);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+                <li style="background-color:#EFF;">}</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void clockwise(int delaytime){</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, HIGH);//HIGHは時計回り</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">}</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void counter_clockwise(int delaytime){</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);//はLOWは反時計回り</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;">}</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">void loop() {</li>
+                <li style="background-color:#EEF;">int val=0;</li>
+                <li style="background-color:#EFF;">val=analogRead(1);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.println(val);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;if(val&lt;200){</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(8,LOW);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(0);}</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;}</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;digitalWrite(8,HIGH);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;counter_clockwise(600);}</li>
+                <li style="background-color:#EEF;">}</li>
+              </ol></code>  
+                
+            暗くしたら反対周りになる。<br>
+            
+            <h2>Assignment2</h2>
+            <h3>サウナで”整う”に近い場面とは</h3>
+            <img src="images/IMG_2581.jpg" width="50%"><br>
+
+        </div>
+
+        
+    </body>
+</html>

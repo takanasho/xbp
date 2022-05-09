@@ -12,18 +12,24 @@
         <h3>授業でしたプログラム</h3>
         <code>
             <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
-            <li style="background-color:#EFF;">void setup() {</li>
-            <li style="background-color:#EEF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
-            <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.begin(9600);</li>
-            <li style="background-color:#EEF;">pinMode(13,OUTPUT);}</li>
-            <li style="background-color:#EEF;">void loop() {int val=0;</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">void setup() {</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+            <li style="background-color:#EFF;">pinMode(13,OUTPUT);</li>
+            <li style="background-color:#EEF;">}</li>
+            <li style="background-color:#EFF;">void loop() {</li>
+            <li style="background-color:#EEF;">&nbsp;int val=0;</li>
             <li style="background-color:#EFF;">&nbsp;val=analogRead(1);</li>
             <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.println(val);</li>
             <li style="background-color:#EFF;">&nbsp;&nbsp;delay(500);</li>
-            <li style="background-color:#EFF;">&nbsp;&nbsp;if(val&lt;200){</li>
-            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,LOW);}</li>
-            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;else{digitalWrite(13,HIGH);}}</li>
-          
+            <li style="background-color:#EEF;">&nbsp;&nbsp;if(val&lt;200){</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,LOW);</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;}else{</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,HIGH);</li>
+            <li style="background-color:#EFF;">}</li>
+            <li style="background-color:#EEF;">}</li>
             </ol></code>
         暗くなると光るコード
         <h2>Assignment2</h2>
